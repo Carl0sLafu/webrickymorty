@@ -1,0 +1,25 @@
+<div class="container" *ngIf="personajes!=null;">
+    <div class="row">
+        <div class="col-3 py-3" *ngFor="let personaje of personajes.results">
+            <div class="card" style="width: 18rem;">
+                <img src="{{personaje.image}}" class="card-img-top" alt="{{personaje.name}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{personaje.name}}</h5>
+                  <a href="character?id={{personaje.id}}" class="btn btn-primary d-block bg-warning border-0">See more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <div class="btn-group py-5" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-secondary fw-bold" *ngIf="page-2 >= 1"><a href="characterslist?page={{page - 2}}" class="text-reset text-decoration-none">{{page - 2}}</a></button>
+                <button type="button" class="btn btn-secondary fw-bold" *ngIf="page-1 >= 1"><a href="characterslist?page={{page - 1}}" class="text-reset text-decoration-none">{{page - 1}}</a></button>
+                <button type="button" class="btn btn-primary fw-bold">{{page}}</button>
+                <button type="button" class="btn btn-secondary fw-bold" *ngIf="page+1 <= 42"><a href="characterslist?page={{page + 1}}" class="text-reset text-decoration-none">{{page + 1}}</a></button>
+                <button type="button" class="btn btn-secondary fw-bold" *ngIf="page+2 <= 42"><a href="characterslist?page={{page + 2}}" class="text-reset text-decoration-none">{{page + 2}}</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+<p *ngIf="personajes==null;">Cargando...</p>

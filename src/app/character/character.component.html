@@ -1,0 +1,13 @@
+<div class="container-fluid pt-5" *ngIf="personaje!=null">
+    <div class="row">
+        <div class="column text-center">
+            <img src="{{personaje.image}}" alt="{{personaje.name}}">
+            <p>Name: {{personaje.name}}</p>
+            <p>Status: {{personaje.status}}</p>
+            <p>Specie: {{personaje.species}}</p>
+            <p>Gender: {{personaje.gender}}</p>
+            <p>Origin: {{personaje.location.name}}</p>
+        </div>
+    </div>
+</div>
+<p class="text-center" *ngIf="personaje==null">Error, no se a encontrado el personaje</p>
