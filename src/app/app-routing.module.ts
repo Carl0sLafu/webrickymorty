@@ -4,6 +4,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { HomeComponent } from './home/home.component';
 import { CharacterComponent } from './character/character.component';
 import { AboutComponent } from './about/about.component';
+import { CustomsearchComponent } from './customsearch/customsearch.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'about',
         component: AboutComponent
+    },
+    {
+        path: 'customsearch',
+        component: CustomsearchComponent
     }
 
 ];
